@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a1bcd5e7-c8d2-4229-bd35-9b9be178356a" name="tesis" url="https://test.uoh.cl/cartografias">
+        <fileTransfer rootFolder="/var/www/html/cartografias" accessType="SFTP" host="52.1.181.83" port="22" sshConfigId="57291b00-170d-466c-92e0-8e9de8dd76d3" sshConfig="user_test@52.1.181.83:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
