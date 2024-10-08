@@ -94,9 +94,9 @@ const Header = () => {
                                    style={{
                                        color: pathname === '/publicaciones' ? '#2563EB' : 'black'
                                    }}>Educativo</a>
-                                <a href="/Contact" className="hover:text-gray-500 mx-5"
+                                <a href="/Contacto" className="hover:text-gray-500 mx-5"
                                    style={{
-                                       color: pathname === '/contacto' ? '#2563EB' : 'black'
+                                       color: pathname === '/Contacto' ? '#2563EB' : 'black'
                                    }}>Contacto</a>
 
                             </nav>
@@ -147,7 +147,7 @@ const Header = () => {
                             <a href="/"><ListItemText primary="Educativo"></ListItemText> </a>
                         </ListItem>
                         <ListItem>
-                            <a href="/Contact"><ListItemText primary="Contacto"></ListItemText> </a>
+                            <a href="/Contacto"><ListItemText primary="Contacto"></ListItemText> </a>
                         </ListItem>
                     </List>
                 </div>
