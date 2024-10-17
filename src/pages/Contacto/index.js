@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Error from '../../components/Error';
 import axios from 'axios';
-import { Hidden } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Container from '@mui/material/Container';
-import { toast } from 'sonner';
+
 
 const Contacto = () => {
 const [email, setEmail] = useState('');
@@ -55,9 +54,10 @@ const handleSubmit = async (e) => {
 
     try {
         const { data } = await axios.post(
-            `backend`,
+            `https://cartografias-back.onrender.com/users/Contact`,
             { email, name, message }
         );
+        console.log(data,"dataaa")
         setError({
             msg: 'Mensaje enviado correctamente',
             error: false,
@@ -69,6 +69,7 @@ const handleSubmit = async (e) => {
         });
     }
 };
+
 const { msg } = error;
 
 

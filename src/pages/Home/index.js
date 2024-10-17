@@ -28,7 +28,7 @@ function Home() {
                     type: 'Feature',
                     properties: {
                         message: 'Paseo de los Derechos Humanos, Escultura El Abrazo Solidario y Piedra Verde',
-                        imageId: 1011,
+                        imageId: 1,
                         iconSize: [60, 60]
                     },
                     geometry: {
@@ -41,7 +41,7 @@ function Home() {
                     type: 'Feature',
                     properties: {
                         message: 'Población Salvador Allende.',
-                        imageId: 870,
+                        imageId: 2,
                         iconSize: [51, 50]
                     },
                     geometry: {
@@ -54,7 +54,7 @@ function Home() {
                     type: 'Feature',
                     properties: {
                         message: 'Calle Profesor Luis Almonacid.',
-                        imageId: 837,
+                        imageId: 3,
                         iconSize: [40, 40]
                     },
                     geometry: {
@@ -133,7 +133,7 @@ function Home() {
             const width = marker.properties.iconSize[0];
             const height = marker.properties.iconSize[1];
             el.className = 'marker';
-            el.style.backgroundImage = `url(https://picsum.photos/id/${marker.properties.imageId}/${width}/${height})`;
+            el.style.backgroundImage = `url(/static/images/${marker.properties.imageId}.jpg)`;
             el.style.width = `${width}px`;
             el.style.height = `${height}px`;
             el.style.backgroundSize = '100%';
@@ -143,12 +143,21 @@ function Home() {
             el.style.cursor = 'pointer';
             el.style.padding = 0;
 
-            el.addEventListener('click', () => {
-                window.alert(marker.properties.message);
-            });
+
+                // Crear un nuevo popup
+            const popup = new mapboxgl.Popup({ offset: 25 }) // Ajusta el offset si es necesario
+                .setHTML(`
+                          <div>
+                                <h3 class="font-bold text-xl" >${marker.properties.message}</h3>
+                                <p class="text-center">Descripción adicional o contenido HTML personalizado.</p>
+                                <img src="/static/images/${marker.properties.imageId}.jpg" alt="Image" style="width: 100px; height: auto;">
+                          </div>
+                `)
+
 
             new mapboxgl.Marker(el)
                 .setLngLat(marker.geometry.coordinates)
+                .setPopup(popup)
                 .addTo(mapRef.current);
         }
 
